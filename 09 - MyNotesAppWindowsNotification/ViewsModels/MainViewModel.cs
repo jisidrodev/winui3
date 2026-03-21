@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Xaml.Input;
 using MyNotesApp.Enums;
+using MyNotesApp.Helpers;
 using MyNotesApp.Interfaces;
 using MyNotesApp.Model;
 using System;
@@ -110,6 +111,24 @@ namespace MyNotesApp.ViewsModels
         public void ListViewDoubleTapped(object sender, DoubleTappedRoutedEventArgs args)
         {
             this.AddOrEdit();
+        }
+
+        [RelayCommand]
+        private void SendToast()
+        {
+            if (ToastWithAvatar.SendToast())
+                NotificationShared.ToastSentSuccessfully();
+            else
+                NotificationShared.CouldNotSendToast();
+        }
+
+        [RelayCommand]
+        private void SendToastWithText()
+        {
+            if (ToastWithText.SendToast())
+                NotificationShared.ToastSentSuccessfully();
+            else
+                NotificationShared.CouldNotSendToast();
         }
     }
 }
