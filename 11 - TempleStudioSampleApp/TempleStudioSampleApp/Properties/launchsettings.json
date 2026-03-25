@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "TempleStudioSampleApp (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "TempleStudioSampleApp (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
