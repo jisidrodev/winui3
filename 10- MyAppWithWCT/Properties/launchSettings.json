@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MyAppWithWCT (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MyAppWithWCT (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
