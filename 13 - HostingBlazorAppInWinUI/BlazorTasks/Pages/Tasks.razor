@@ -1,0 +1,30 @@
+﻿@page "/tasks"
+@using BlazorTasks.Models
+<h3>Tasks - (@_taskItems.Count(task => !task.IsComplete)) Incomplete</h3>
+
+<ul>
+    @foreach(var tasks in _taskItems)
+    {
+        <li>
+            <input type="checkbox" @bind="tasks.IsComplete" />
+            <input @bind="tasks.Name" />
+        </li>
+    }
+</ul>
+<input placeholder="Enter new task..." @bind="_newTask" />
+<button @onclick="AddTask">Add task</button>
+
+@code {
+        private IList<TaskItem> _taskItems = new List<TaskItem>();
+        private string _newTask = String.Empty;
+
+        private void AddTask()
+        {
+            if(!String.IsNullOrWhiteSpace(_newTask))
+            {
+                _taskItems.Add(new TaskItem(){Name = _newTask});
+                _newTask = String.Empty;
+            }
+
+        }
+}
