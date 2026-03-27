@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MyNotesAppUnoPlatform",
+  "display": "standalone",
+  "name": "MyNotesAppUnoPlatform",
+  "short_name": "MyNotesAppUnoPlatform",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
